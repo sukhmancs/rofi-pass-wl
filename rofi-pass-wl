@@ -23,7 +23,7 @@ if [[ $action == "password" ]]; then
   echo -n "$passwd" | wtype -
 elif [[ $action == "autotype" ]]; then
   txt=$(pass show "$password" | sed -n "s/$action: //p")
-  [[ -n $txt ]] || txt="user :tab pass" # default autotype
+  [[ -n $txt ]] || txt="login :tab pass" # default autotype
   for word in $txt
   do
     if [[ $word == ":tab" ]]; then
